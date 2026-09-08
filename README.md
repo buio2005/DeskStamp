@@ -90,6 +90,7 @@ language keeps every existing folder recognised and sorted.
 | `DeskStamp-Undo.ps1` | Puts recent moves back |
 | `Start-DeskStamp.cmd`, `Dry-Run.cmd`, `Undo.cmd` | Launchers |
 | `lang/*.txt` | Translations |
+| `deskstamp.ico` | The application icon |
 | `exclusions.txt` | Your exceptions |
 | `deskstamp-log.txt`, `deskstamp-moves.txt`, `deskstamp-snapshot.txt`, `deskstamp-settings.txt` | Generated at runtime, not tracked by Git |
 

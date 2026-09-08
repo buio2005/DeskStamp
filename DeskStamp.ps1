@@ -50,8 +50,15 @@ function Set-AvvioAutomatico([bool]$attivo) {
     else { Remove-ItemProperty -Path $ChiaveRun -Name $NomeRun -ErrorAction SilentlyContinue }
 }
 
-# --- icona disegnata al volo: un foglietto di calendario con la D -----------
+# --- icona ------------------------------------------------------------------
+# Usa deskstamp.ico se e' presente accanto allo script (contiene un disegno
+# diverso per ogni misura: semplificato sotto i 32 pixel, logo intero sopra).
+# Se il file manca, disegna al volo un ripiego, cosi' il programma parte lo stesso.
 function New-IconaDeskStamp {
+    $fileIcona = Join-Path $script:Radice 'deskstamp.ico'
+    if (Test-Path -LiteralPath $fileIcona) {
+        try { return New-Object System.Drawing.Icon($fileIcona) } catch { }
+    }
     $bmp = New-Object System.Drawing.Bitmap 32, 32
     $g   = [System.Drawing.Graphics]::FromImage($bmp)
     $g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
