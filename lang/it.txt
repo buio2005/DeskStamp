@@ -1,0 +1,76 @@
+﻿# DeskStamp - Italiano
+# Per aggiungere una lingua: copia questo file, chiamalo con il codice di due
+# lettere della lingua (es. fr.txt) e traduci solo la parte a destra del segno
+# uguale. \n indica un a capo, {0} e {1} sono valori inseriti dal programma.
+
+language.name = Italiano
+
+date.days = Domenica,Lunedì,Martedì,Mercoledì,Giovedì,Venerdì,Sabato
+date.months = Gennaio,Febbraio,Marzo,Aprile,Maggio,Giugno,Luglio,Agosto,Settembre,Ottobre,Novembre,Dicembre
+
+log.started = === DeskStamp avviato ===
+log.startedInfo = Desktop: {0} - intoccabili: {1} - gia' archiviati: {2}
+log.ignored = Ignorato, {0}: {1}
+log.detected = Rilevato: {0}
+log.waiting = In attesa, aperto da un programma: {0}
+log.nowFree = Ora e' libero: {0}
+log.dayFolderCreated = Creata la cartella del giorno: {0}
+log.moved = SPOSTATO: {0} -> {1}
+log.wouldMove = SPOSTEREI: {0} -> {1}
+log.moveError = ERRORE spostando {0}: {1}
+log.checkError = ERRORE nel controllo: {0}
+log.paused = Messo in pausa
+log.resumed = Ripreso
+log.autostartOn = Avvio automatico attivato
+log.autostartOff = Avvio automatico disattivato
+log.quit = Chiuso dall'utente
+log.languageChanged = Lingua cambiata: {0}
+
+reason.serviceFile = file di servizio di un programma
+reason.hiddenSystem = elemento nascosto o di sistema
+reason.downloading = download o copia ancora in corso
+reason.shortcut = e' un collegamento
+reason.needsName = aspetto che tu gli dia un nome
+reason.alreadyArchived = gia' archiviato, l'hai riportato tu qui
+reason.excluded = presente in exclusions.txt
+
+menu.pause = Metti in pausa
+menu.resume = Riprendi
+menu.openToday = Apri la cartella di oggi
+menu.undo = Annulla gli ultimi spostamenti...
+menu.editExclusions = Modifica le esclusioni
+menu.reloadExclusions = Rileggi le esclusioni
+menu.openLog = Apri il diario
+menu.language = Lingua / Language
+menu.autostart = Avvia con Windows
+menu.quit = Esci
+
+tray.active = DeskStamp - attivo
+tray.activeCount = DeskStamp - attivo ({0} archiviati)
+tray.paused = DeskStamp - in pausa
+
+balloon.running = In funzione. Clic destro sull'icona per il menu.
+balloon.dayFolder = Da adesso i salvataggi di oggi finiscono in\n{0}
+balloon.exclusionsReloaded = Esclusioni ricaricate: {0} regole
+balloon.autostartOn = DeskStamp partira' insieme a Windows.
+balloon.autostartOff = DeskStamp non partira' piu' da solo.
+
+msg.alreadyRunning = DeskStamp e' gia' in funzione.
+msg.desktopNotFound = Percorso Desktop non trovato: {0}
+
+dryrun.title = DeskStamp - prova (non sposta nulla)
+dryrun.mode = MODALITA' PROVA: non viene spostato nulla, scrivo solo cosa farei.
+dryrun.stop = Premi CTRL+C per fermare.
+
+undo.title = DeskStamp - annulla
+undo.noRegistry = Nessun registro: DeskStamp non ha ancora spostato niente.
+undo.emptyRegistry = Il registro e' vuoto.
+undo.header = Ultimi {0} elementi archiviati da DeskStamp:
+undo.missing = [non piu' presente]
+undo.confirm = Li rimetto tutti sul desktop? (S/N)
+undo.yesPattern = ^[SsYy]
+undo.cancelled = Annullato, non ho toccato niente.
+undo.skip = Salto {0}: sul desktop esiste gia' un elemento con quel nome.
+undo.restored = Rimesso sul desktop: {0}
+undo.error = Errore su {0}: {1}
+undo.done = {0} elementi rimessi sul desktop. DeskStamp non li toccera' piu'.

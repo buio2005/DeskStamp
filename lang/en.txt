@@ -1,0 +1,76 @@
+﻿# DeskStamp - English
+# To add a language: copy this file, name it with the two-letter code of the
+# language (e.g. fr.txt) and translate only the text to the right of the equals
+# sign. \n means a line break, {0} and {1} are values the program fills in.
+
+language.name = English
+
+date.days = Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday
+date.months = January,February,March,April,May,June,July,August,September,October,November,December
+
+log.started = === DeskStamp started ===
+log.startedInfo = Desktop: {0} - untouched: {1} - already filed: {2}
+log.ignored = Skipped, {0}: {1}
+log.detected = Spotted: {0}
+log.waiting = Waiting, a program still has it open: {0}
+log.nowFree = Now free: {0}
+log.dayFolderCreated = Created today's folder: {0}
+log.moved = FILED: {0} -> {1}
+log.wouldMove = WOULD FILE: {0} -> {1}
+log.moveError = ERROR moving {0}: {1}
+log.checkError = ERROR during check: {0}
+log.paused = Paused
+log.resumed = Resumed
+log.autostartOn = Start with Windows enabled
+log.autostartOff = Start with Windows disabled
+log.quit = Closed by the user
+log.languageChanged = Language changed: {0}
+
+reason.serviceFile = a program's working file
+reason.hiddenSystem = hidden or system item
+reason.downloading = download or copy still running
+reason.shortcut = it is a shortcut
+reason.needsName = waiting for you to name it
+reason.alreadyArchived = already filed, you put it back here
+reason.excluded = listed in exclusions.txt
+
+menu.pause = Pause
+menu.resume = Resume
+menu.openToday = Open today's folder
+menu.undo = Undo recent moves...
+menu.editExclusions = Edit exclusions
+menu.reloadExclusions = Reload exclusions
+menu.openLog = Open the log
+menu.language = Lingua / Language
+menu.autostart = Start with Windows
+menu.quit = Quit
+
+tray.active = DeskStamp - running
+tray.activeCount = DeskStamp - running ({0} filed)
+tray.paused = DeskStamp - paused
+
+balloon.running = Running. Right-click the icon for the menu.
+balloon.dayFolder = From now on today's files go into\n{0}
+balloon.exclusionsReloaded = Exclusions reloaded: {0} rules
+balloon.autostartOn = DeskStamp will start with Windows.
+balloon.autostartOff = DeskStamp will no longer start on its own.
+
+msg.alreadyRunning = DeskStamp is already running.
+msg.desktopNotFound = Desktop folder not found: {0}
+
+dryrun.title = DeskStamp - dry run (moves nothing)
+dryrun.mode = DRY RUN: nothing is moved, I only write down what I would do.
+dryrun.stop = Press CTRL+C to stop.
+
+undo.title = DeskStamp - undo
+undo.noRegistry = No history yet: DeskStamp has not moved anything.
+undo.emptyRegistry = The history is empty.
+undo.header = Last {0} items filed by DeskStamp:
+undo.missing = [no longer there]
+undo.confirm = Put them all back on the desktop? (Y/N)
+undo.yesPattern = ^[Yy]
+undo.cancelled = Cancelled, nothing was touched.
+undo.skip = Skipping {0}: an item with that name is already on the desktop.
+undo.restored = Back on the desktop: {0}
+undo.error = Error on {0}: {1}
+undo.done = {0} items put back on the desktop. DeskStamp will leave them alone.

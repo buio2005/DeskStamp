@@ -1,0 +1,12 @@
+﻿# DeskStamp - your own exceptions / le tue eccezioni personali
+#
+# One pattern per line. Anything matching is never moved, even if created
+# today. Wildcards * and ? are allowed. Lines starting with # are ignored.
+#
+# Un modello per riga. Cio' che corrisponde non viene mai spostato, anche
+# se creato oggi. Si possono usare i caratteri jolly * e ?
+#
+# Examples / esempi:
+# Work in progress
+# Notes*.txt
+# *.psd

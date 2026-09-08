@@ -1,0 +1,10 @@
+﻿# DeskStamp - elenco personale di eccezioni
+#
+# Un modello per riga: gli elementi che corrispondono non verranno MAI spostati,
+# anche se creati oggi. Si possono usare i caratteri jolly * e ?
+# Le righe che iniziano con # sono commenti e vengono ignorate.
+#
+# Esempi (togli il # davanti per attivarli):
+# Lavoro in corso
+# Appunti*.txt
+# *.psd
