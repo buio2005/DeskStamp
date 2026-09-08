@@ -2,9 +2,9 @@
 <#
     DeskStamp - Core
     ------------------------------------------------------------------
-    VERSIONE 1.0.0 - questo e' l'unico punto in cui va aggiornata:
+    VERSIONE 1.0.1 - questo e' l'unico punto in cui va aggiornata:
     tutti gli altri script la leggono da $script:Versione.
-    VERSION 1.0.0 - the only place to update it.
+    VERSION 1.0.1 - the only place to update it.
     Funzioni condivise dai tre script. Non si lancia da solo.
     Shared functions. Not meant to be run on its own.
 
@@ -12,7 +12,7 @@
     del programma, poi fare:  . (Join-Path $script:Radice 'DeskStamp-Core.ps1')
 #>
 
-$script:Versione = '1.0.0'
+$script:Versione = '1.0.1'
 
 if (-not $script:Radice) { $script:Radice = $PSScriptRoot }
 
@@ -118,6 +118,17 @@ function Get-PercorsoDesktop {
 
 function Get-NomeCartellaGiorno([datetime]$d) {
     '{0:yyyy-MM-dd} {1} {2} {3}' -f $d, $script:GiorniNomi[[int]$d.DayOfWeek], $d.Day, $script:MesiNomi[$d.Month - 1]
+}
+
+# Cerca sul desktop una cartella che cominci con la data di oggi, qualunque sia
+# la lingua con cui e' stata creata. Senza questo, cambiando lingua a meta'
+# giornata nascerebbe una seconda cartella per lo stesso giorno.
+function Get-CartellaGiorno([datetime]$d) {
+    $prefisso = '{0:yyyy-MM-dd}' -f $d
+    $trovate = @(Get-ChildItem -LiteralPath $script:Desktop -Force -Directory -ErrorAction SilentlyContinue |
+                 Where-Object { $_.Name.StartsWith($prefisso) } | Sort-Object Name)
+    if ($trovate.Count -gt 0) { return $trovate[0].FullName }
+    return (Join-Path $script:Desktop (Get-NomeCartellaGiorno $d))
 }
 
 function Test-CorrispondeAModello([string]$nome, $modelli) {
@@ -271,8 +282,8 @@ function Invoke-Giro {
         }
         if ($t.Segnalato) { Scrivi (T 'log.nowFree' $nome) 'White' }
 
-        $nomeGiorno     = Get-NomeCartellaGiorno $adesso
-        $cartellaGiorno = Join-Path $script:Desktop $nomeGiorno
+        $cartellaGiorno = Get-CartellaGiorno $adesso
+        $nomeGiorno     = Split-Path -Leaf $cartellaGiorno
 
         if ($script:Simulazione) {
             Scrivi (T 'log.wouldMove' $nome ($nomeGiorno + '\')) 'Yellow'

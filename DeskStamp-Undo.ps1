@@ -65,3 +65,5 @@ foreach ($c in $candidati) {
 }
 Write-Host ''
 Write-Host (T 'undo.done' $fatti) -ForegroundColor Cyan
+Write-Host ''
+[void](Read-Host (T 'undo.close'))

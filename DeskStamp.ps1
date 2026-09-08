@@ -111,13 +111,19 @@ $script:VocePausa.add_Click({
 
 $script:VoceApri = New-Object System.Windows.Forms.ToolStripMenuItem
 $script:VoceApri.add_Click({
-    $c = Join-Path $script:Desktop (Get-NomeCartellaGiorno (Get-Date))
+    $c = Get-CartellaGiorno (Get-Date)
     if (Test-Path -LiteralPath $c) { Start-Process explorer.exe $c } else { Start-Process explorer.exe $script:Desktop }
 })
 [void]$menu.Items.Add($script:VoceApri)
 
 $script:VoceUndo = New-Object System.Windows.Forms.ToolStripMenuItem
-$script:VoceUndo.add_Click({ Start-Process -FilePath (Join-Path $script:Radice 'Undo.cmd') })
+$script:VoceUndo.add_Click({
+    # Avvia direttamente lo script invece del .cmd: lanciare un .cmd scaricato da
+    # internet fa ricomparire ogni volta l'avviso di sicurezza di Windows.
+    Start-Process -FilePath 'powershell.exe' -ArgumentList @(
+        '-NoProfile','-ExecutionPolicy','Bypass','-File',
+        ('"' + (Join-Path $script:Radice 'DeskStamp-Undo.ps1') + '"'))
+})
 [void]$menu.Items.Add($script:VoceUndo)
 
 [void]$menu.Items.Add((New-Object System.Windows.Forms.ToolStripSeparator))
@@ -133,6 +139,8 @@ $script:VoceRicarica = New-Object System.Windows.Forms.ToolStripMenuItem
 $script:VoceRicarica.add_Click({
     $script:Esclusioni = Get-Esclusioni
     $script:Ignorati = @{}
+    Aggiorna-TestiMenu
+    Scrivi (T 'balloon.exclusionsReloaded' $script:Esclusioni.Count)
     $script:Icona.ShowBalloonTip(3000, 'DeskStamp', (T 'balloon.exclusionsReloaded' $script:Esclusioni.Count), [System.Windows.Forms.ToolTipIcon]::Info)
 })
 [void]$menu.Items.Add($script:VoceRicarica)
@@ -195,7 +203,7 @@ function Aggiorna-TestiMenu {
     $script:VoceApri.Text       = T 'menu.openToday'
     $script:VoceUndo.Text       = T 'menu.undo'
     $script:VoceEsclusioni.Text = T 'menu.editExclusions'
-    $script:VoceRicarica.Text   = T 'menu.reloadExclusions'
+    $script:VoceRicarica.Text   = T 'menu.reloadExclusionsCount' $script:Esclusioni.Count
     $script:VoceLog.Text        = T 'menu.openLog'
     $script:VoceLingua.Text     = T 'menu.language'
     $script:VoceAvvio.Text      = T 'menu.autostart'
@@ -205,7 +213,7 @@ Aggiorna-TestiMenu
 
 $script:Icona.ContextMenuStrip = $menu
 $script:Icona.add_MouseDoubleClick({
-    $c = Join-Path $script:Desktop (Get-NomeCartellaGiorno (Get-Date))
+    $c = Get-CartellaGiorno (Get-Date)
     if (Test-Path -LiteralPath $c) { Start-Process explorer.exe $c }
 })
 
