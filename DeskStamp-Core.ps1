@@ -2,12 +2,17 @@
 <#
     DeskStamp - Core
     ------------------------------------------------------------------
+    VERSIONE 1.0.0 - questo e' l'unico punto in cui va aggiornata:
+    tutti gli altri script la leggono da $script:Versione.
+    VERSION 1.0.0 - the only place to update it.
     Funzioni condivise dai tre script. Non si lancia da solo.
     Shared functions. Not meant to be run on its own.
 
     Chi lo include deve prima impostare $script:Radice con la cartella
     del programma, poi fare:  . (Join-Path $script:Radice 'DeskStamp-Core.ps1')
 #>
+
+$script:Versione = '1.0.0'
 
 if (-not $script:Radice) { $script:Radice = $PSScriptRoot }
 
@@ -199,6 +204,7 @@ function Initialize-Stato {
     $script:Ignorati   = @{}
 
     Scrivi (T 'log.started') 'Cyan'
+    Scrivi ('DeskStamp {0}' -f $script:Versione) 'Cyan'
     Scrivi (T 'log.startedInfo' $script:Desktop $script:Fotografia.Count $script:GiaSpostati.Count) 'Cyan'
 }
 

@@ -86,6 +86,12 @@ $script:Icona.Visible = $true
 # --- menu -------------------------------------------------------------------
 $menu = New-Object System.Windows.Forms.ContextMenuStrip
 
+# riga di intestazione, non cliccabile: dice quale versione stai usando
+$voceVersione = New-Object System.Windows.Forms.ToolStripMenuItem("DeskStamp $script:Versione")
+$voceVersione.Enabled = $false
+[void]$menu.Items.Add($voceVersione)
+[void]$menu.Items.Add((New-Object System.Windows.Forms.ToolStripSeparator))
+
 $script:VocePausa = New-Object System.Windows.Forms.ToolStripMenuItem
 $script:VocePausa.add_Click({
     $script:InPausa = -not $script:InPausa
