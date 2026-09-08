@@ -41,8 +41,9 @@ ultimi elementi archiviati.
 ## Installazione
 
 1. Scarica lo ZIP.
-2. **Tasto destro sullo ZIP → Proprietà → spunta "Annulla blocco" → OK.** Fallo
-   *prima* di estrarre, altrimenti Windows si rifiuterà di eseguire gli script.
+2. **Tasto destro sullo ZIP → Proprietà → spunta "Annulla blocco" → OK, prima di
+   estrarre.** L'estrazione funziona comunque: quella spunta serve a evitare
+   l'avviso di sicurezza che Windows mostra al primo avvio dei file scaricati.
 3. Estrai la cartella dove preferisci.
 4. Sistema il desktop come vuoi che resti: quello che c'è al momento
    dell'avvio diventa intoccabile.

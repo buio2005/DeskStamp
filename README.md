@@ -40,8 +40,9 @@ Every move is recorded, and **Undo** puts recent items back where they came from
 ## Install
 
 1. Download the ZIP.
-2. **Right-click the ZIP → Properties → tick "Unblock" → OK.** Do this *before*
-   extracting, or Windows will refuse to run the scripts.
+2. **Right-click the ZIP → Properties → tick "Unblock" → OK, before extracting.**
+   Extraction works either way. What this spares you is the security warning
+   Windows shows the first time you launch a file that came from the internet.
 3. Extract the folder anywhere you like.
 4. Tidy your desktop the way you want it to stay — what is there at launch
    becomes untouchable.
