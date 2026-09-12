@@ -40,7 +40,7 @@ ultimi elementi archiviati.
 
 ## Installazione
 
-1. Scarica lo ZIP.
+1. Scarica lo zip, estrai la cartella e avvia Start-DeskStamp.cmd
 2. **Tasto destro sullo ZIP → Proprietà → spunta "Annulla blocco" → OK, prima di
    estrarre.** L'estrazione funziona comunque: quella spunta serve a evitare
    l'avviso di sicurezza che Windows mostra al primo avvio dei file scaricati.
