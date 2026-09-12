@@ -39,7 +39,7 @@ Every move is recorded, and **Undo** puts recent items back where they came from
 
 ## Install
 
-1. Download the ZIP.
+1. Download the ZIP file, extract the folder, and run Start-DeskStamp.cmd
 2. **Right-click the ZIP → Properties → tick "Unblock" → OK, before extracting.**
    Extraction works either way. What this spares you is the security warning
    Windows shows the first time you launch a file that came from the internet.
