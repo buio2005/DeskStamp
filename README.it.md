@@ -40,7 +40,7 @@ ultimi elementi archiviati.
 
 ## Installazione
 
-1. Scarica lo zip, estrai la cartella e avvia Start-DeskStamp.cmd
+1. Scarica lo zip, https://github.com/buio2005/DeskStamp/releases/latest/download/DeskStamp-source.zip estrai la cartella e avvia Start-DeskStamp.cmd
 2. **Tasto destro sullo ZIP → Proprietà → spunta "Annulla blocco" → OK, prima di
    estrarre.** L'estrazione funziona comunque: quella spunta serve a evitare
    l'avviso di sicurezza che Windows mostra al primo avvio dei file scaricati.
