@@ -1,3 +1,6 @@
+<img width="716" height="321" alt="screen" src="https://github.com/user-attachments/assets/ae93470d-9c09-4aa8-b246-ca7b252757d1" />
+
+
 # DeskStamp
 
 **Every day gets its own folder on your desktop.**
